@@ -1,0 +1,23 @@
+<suite name="All Test Suite">
+    <test name="Login with Valid Username and Password">
+        <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="loginWithValidUsernameAndPassword"/>
+                </methods>
+            </class>
+<!--            <class name="testcases.TC02_Inventory">-->
+<!--                <methods>-->
+<!--                    <include name="selectItemsRandomly"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+        </classes>
+    </test>
+
+
+
+
+
+
+
+</suite>
