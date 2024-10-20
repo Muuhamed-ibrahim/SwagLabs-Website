@@ -24,23 +24,24 @@ public class P02_InventoryPage extends PageBase {
 
         List<WebElement> addToCartButtons = driver.findElements(By.xpath("//button[contains(@class, 'btn_inventory')]"));
         Collections.shuffle(addToCartButtons);
-
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         totalPrice = 0;
         for (int i = 0; i < randomNumber && i < addToCartButtons.size(); i++) {
             WebElement button = addToCartButtons.get(i);
             button.click();
-
-            Thread.sleep(2000);
+            Thread.sleep(3000);
 
             String priceText = driver.findElements(By.xpath("//div[@class='inventory_item_price']")).get(i).getText();
-            double price = Double.parseDouble(priceText.replace("$", ""));
+            double price = Double.parseDouble(priceText.replace("$", "")); // تحويل السعر إلى عدد عشري
+            totalPrice += price;
         }
 
+        Thread.sleep(3000);
         System.out.println("Total price of added items: " + totalPrice);
         return this;
     }
+
 
 
     public P02_InventoryPage clickOnCartBtn() {
@@ -48,8 +49,7 @@ public class P02_InventoryPage extends PageBase {
         return this;
     }
 
-    public double getTotalPrice() throws InterruptedException {
-        Thread.sleep(1000);
+    public double getTotalPrice() {
         return totalPrice;
     }
 }
