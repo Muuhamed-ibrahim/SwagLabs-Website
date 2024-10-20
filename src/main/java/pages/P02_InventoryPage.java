@@ -14,21 +14,42 @@ public class P02_InventoryPage extends PageBase {
         super(driver);
     }
 
-    public P02_InventoryPage addItemsToCartRandomly() throws InterruptedException {
+    final private By cartBtn = By.id("shopping_cart_container");
 
+    private double totalPrice = 0;
+
+    public P02_InventoryPage addItemsToCartRandomly() throws InterruptedException {
         int randomNumber = Utility.generateRandomNumber();
         System.out.println("Adding " + randomNumber + " random items to the cart.");
 
         List<WebElement> addToCartButtons = driver.findElements(By.xpath("//button[contains(@class, 'btn_inventory')]"));
-
-        // خلط العناصر للحصول على ترتيب عشوائي
         Collections.shuffle(addToCartButtons);
 
-        // إضافة عدد عشوائي من العناصر بعد ترتيبهم عشوائيًا
-        for (int i = 0; i < randomNumber; i++) {
-            addToCartButtons.get(i).click();
+        Thread.sleep(2000);
+
+        totalPrice = 0;
+        for (int i = 0; i < randomNumber && i < addToCartButtons.size(); i++) {
+            WebElement button = addToCartButtons.get(i);
+            button.click();
+
+            Thread.sleep(2000);
+
+            String priceText = driver.findElements(By.xpath("//div[@class='inventory_item_price']")).get(i).getText();
+            double price = Double.parseDouble(priceText.replace("$", ""));
         }
-        Thread.sleep(1000);
+
+        System.out.println("Total price of added items: " + totalPrice);
         return this;
+    }
+
+
+    public P02_InventoryPage clickOnCartBtn() {
+        driver.findElement(cartBtn).click();
+        return this;
+    }
+
+    public double getTotalPrice() throws InterruptedException {
+        Thread.sleep(1000);
+        return totalPrice;
     }
 }

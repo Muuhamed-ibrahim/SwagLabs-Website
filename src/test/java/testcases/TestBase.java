@@ -13,6 +13,7 @@ import java.time.Duration;
 public class TestBase {
 
     static WebDriver driver;
+    protected static double totalPrice;
 
     @BeforeSuite
     public void beforeSuite() throws Exception {
@@ -27,10 +28,10 @@ public class TestBase {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
-    @AfterTest
-    public void tearDown(){
-        driver.quit();
-    }
+//    @AfterTest
+//    public void tearDown(){
+//        driver.quit();
+//    }
 
     @AfterSuite
     public void afterSuite() throws Exception {

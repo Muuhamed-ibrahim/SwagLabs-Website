@@ -17,8 +17,6 @@ public class TC01_Login extends TestBase{
 
         // Take Screenshot
         PageBase.captureScreenshot(driver,"LoginScreenshot");
-        // Assert if login successfully
-
 
     }
 }
