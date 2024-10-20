@@ -14,9 +14,9 @@ public class TC05_Overview extends TestBase {
         System.out.println("Final Price: " + finalPrice);
 
         if (Math.abs(finalPrice - totalPrice) < 0.01) {
-            System.out.println("الأسعار متطابقة!");
+            System.out.println("price is matching");
         } else {
-            System.out.println("الأسعار لا تتطابق!");
+            System.out.println("price is not matching");
         }
     }
 
