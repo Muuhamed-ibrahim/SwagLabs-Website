@@ -1,6 +1,6 @@
 # SwagLabs E-Commerce
 
-![Awesomeqa E-Commerce](https://www.saucedemo.com/v1/img/SwagBot_Footer_graphic.png)
+![Awesomeqa E-Commerce](https://camo.githubusercontent.com/7c15771e4ebc8debedf856df7453ce3a744df0344a9a17297ee02beb1518e3c8/68747470733a2f2f7777772e736175636564656d6f2e636f6d2f76312f696d672f4c6f67696e5f426f745f677261706869632e706e67)
 
 ## Table of Contents
 
