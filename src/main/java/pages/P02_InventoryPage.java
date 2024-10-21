@@ -1,5 +1,6 @@
 package pages;
 
+import actions.CustomDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,8 +33,10 @@ public class P02_InventoryPage extends PageBase {
             button.click();
             Thread.sleep(3000);
 
-            String priceText = driver.findElements(By.xpath("//div[@class='inventory_item_price']")).get(i).getText();
-            double price = Double.parseDouble(priceText.replace("$", "")); // تحويل السعر إلى عدد عشري
+            WebElement itemElement = button.findElement(By.xpath("./ancestor::div[@class='inventory_item']"));
+            String priceText = itemElement.findElement(By.xpath(".//div[@class='inventory_item_price']")).getText();
+
+            double price = Double.parseDouble(priceText.replace("$", ""));
             totalPrice += price;
         }
 
@@ -42,10 +45,9 @@ public class P02_InventoryPage extends PageBase {
         return this;
     }
 
-
-
     public P02_InventoryPage clickOnCartBtn() {
-        driver.findElement(cartBtn).click();
+        //driver.findElement(cartBtn).click();
+        new CustomDecorator(driver,cartBtn,2000);
         return this;
     }
 

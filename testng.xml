@@ -1,5 +1,6 @@
 <suite name="All Test Suite">
-    <test name="Login with Valid Username and Password">
+    <test name="E2E Purchase flow on chrome">
+        <parameter name="browsername"  value=""/>
         <classes>
             <class name="testcases.TC01_Login">
                 <methods>

@@ -1,6 +1,7 @@
 package pages;
 
 
+import actions.CustomDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -19,15 +20,18 @@ public class P01_LoginPage extends PageBase{
 
     //TODO: Action Methods
     public P01_LoginPage enterUSERNAME_TXT(String username){
-        driver.findElement(this.USERNAME_TEXT).sendKeys(username);
+        //driver.findElement(this.USERNAME_TEXT).sendKeys(username);
+        new CustomDecorator(driver,this.USERNAME_TEXT,2000);
         return this;
     }
     public P01_LoginPage enterPASSWORD_TEXT(String password){
-        driver.findElement(this.PASSWORD_TEXT).sendKeys(password);
+        //driver.findElement(this.PASSWORD_TEXT).sendKeys(password);
+        new CustomDecorator(driver,this.PASSWORD_TEXT,2000);
         return this;
     }
     public P01_LoginPage clickOnLogin_BUTTON(){
-        driver.findElement(this.Login_BUTTON).click();
+        //driver.findElement(this.Login_BUTTON).click();
+        new CustomDecorator(driver,this.Login_BUTTON,2000);
         return this;
     }
 

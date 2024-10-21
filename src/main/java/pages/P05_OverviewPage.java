@@ -1,5 +1,6 @@
 package pages;
 
+import actions.CustomDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,7 +13,8 @@ public class P05_OverviewPage extends PageBase {
     final private By totalPriceLocator = By.xpath("//div[@class='summary_subtotal_label']"); // لوكيتر السعر النهائي
 
     public P05_OverviewPage clickOnFinishBtn() {
-        driver.findElement(finishBtn).click();
+        //driver.findElement(finishBtn).click();
+        new CustomDecorator(driver,this.finishBtn,2000);
         return this;
     }
 

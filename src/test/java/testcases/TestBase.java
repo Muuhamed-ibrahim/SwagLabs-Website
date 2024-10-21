@@ -3,12 +3,13 @@ package testcases;
 import common.MyScreenRecorder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 import java.time.Duration;
+
+import static drivers.DriverFactory.getNewInstance;
+import static drivers.DriverHolder.getDriver;
+import static drivers.DriverHolder.setDriver;
 
 public class TestBase {
 
@@ -20,18 +21,19 @@ public class TestBase {
         MyScreenRecorder.startRecording("SwagLabs TestCases");
     }
 
+    @Parameters("browsername")
     @BeforeTest
-    public void setDriver(){
-        driver = new ChromeDriver();
+    public void setUpDriver(String browsername){
+        setDriver(getNewInstance(browsername));
+        driver=getDriver();
         driver.get("https://www.saucedemo.com/v1/");
-        driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
     }
 
-//    @AfterTest
-//    public void tearDown(){
-//        driver.quit();
-//    }
+    @AfterTest
+    public void tearDown(){
+        driver.quit();
+    }
 
     @AfterSuite
     public void afterSuite() throws Exception {

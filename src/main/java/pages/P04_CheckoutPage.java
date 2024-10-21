@@ -1,5 +1,6 @@
 package pages;
 
+import actions.CustomDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -14,21 +15,25 @@ public class P04_CheckoutPage extends PageBase{
     final private By continueBtn = By.xpath("(//input)[4]");
 
     public P04_CheckoutPage enterFirstName(String firstname){
-        driver.findElement(this.firstname).sendKeys(firstname);
+        //driver.findElement(this.firstname).sendKeys(firstname);
+        new CustomDecorator(driver,this.firstname,2000);
         return this;
     }
     public P04_CheckoutPage enterLastName(String lastname){
-        driver.findElement(this.lastname).sendKeys(lastname);
+        //driver.findElement(this.lastname).sendKeys(lastname);
+        new CustomDecorator(driver,this.lastname,2000);
         return this;
 
     }
     public P04_CheckoutPage enterZip(String zip){
-        driver.findElement(this.zip).sendKeys(zip);
+        //driver.findElement(this.zip).sendKeys(zip);
+        new CustomDecorator(driver,this.zip,2000);
         return this;
 
     }
     public P04_CheckoutPage clickOnContinueBtn(){
-        driver.findElement(this.continueBtn).click();
+        //driver.findElement(this.continueBtn).click();
+        new CustomDecorator(driver,this.continueBtn,2000);
         return this;
 
     }
