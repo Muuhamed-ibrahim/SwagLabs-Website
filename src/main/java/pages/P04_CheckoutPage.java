@@ -16,24 +16,24 @@ public class P04_CheckoutPage extends PageBase{
 
     public P04_CheckoutPage enterFirstName(String firstname){
         //driver.findElement(this.firstname).sendKeys(firstname);
-        new CustomDecorator(driver,this.firstname,2000);
+        new CustomDecorator(driver,this.firstname,2000).sendKeys(firstname);
         return this;
     }
     public P04_CheckoutPage enterLastName(String lastname){
         //driver.findElement(this.lastname).sendKeys(lastname);
-        new CustomDecorator(driver,this.lastname,2000);
+        new CustomDecorator(driver,this.lastname,2000).sendKeys(lastname);
         return this;
 
     }
     public P04_CheckoutPage enterZip(String zip){
         //driver.findElement(this.zip).sendKeys(zip);
-        new CustomDecorator(driver,this.zip,2000);
+        new CustomDecorator(driver,this.zip,2000).sendKeys(zip);
         return this;
 
     }
     public P04_CheckoutPage clickOnContinueBtn(){
         //driver.findElement(this.continueBtn).click();
-        new CustomDecorator(driver,this.continueBtn,2000);
+        new CustomDecorator(driver,this.continueBtn,2000).click();
         return this;
 
     }

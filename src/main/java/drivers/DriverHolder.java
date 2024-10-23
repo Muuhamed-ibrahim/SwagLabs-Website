@@ -12,4 +12,5 @@ public class DriverHolder {
     public static void setDriver(WebDriver driver) {
         DriverHolder.driver.set(driver);
     }
+
 }

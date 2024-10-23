@@ -13,7 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DriverFactory {
-
     public static WebDriver getNewInstance(String browserName) {
         switch (browserName.toLowerCase()) {
             case "chrome-headless":
@@ -62,5 +61,4 @@ public class DriverFactory {
                 return new ChromeDriver(chromeOptions);
         }
     }
-
 }

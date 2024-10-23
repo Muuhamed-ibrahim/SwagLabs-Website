@@ -14,7 +14,7 @@ public class P05_OverviewPage extends PageBase {
 
     public P05_OverviewPage clickOnFinishBtn() {
         //driver.findElement(finishBtn).click();
-        new CustomDecorator(driver,this.finishBtn,2000);
+        new CustomDecorator(driver,this.finishBtn,2000).click();
         return this;
     }
 

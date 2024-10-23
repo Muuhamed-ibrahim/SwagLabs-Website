@@ -47,7 +47,7 @@ public class P02_InventoryPage extends PageBase {
 
     public P02_InventoryPage clickOnCartBtn() {
         //driver.findElement(cartBtn).click();
-        new CustomDecorator(driver,cartBtn,2000);
+        new CustomDecorator(driver,cartBtn,2000).click();
         return this;
     }
 
