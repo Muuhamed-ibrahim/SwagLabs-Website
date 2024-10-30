@@ -60,7 +60,9 @@ To set up the Awesomeqa application locally, follow these steps:
 
 ## Contributing
 * We welcome contributions from the community. To contribute to SwagLabs, follow these steps:
+### Local testing execution example
 
+![Local testing execution example](execution.gif)
 ## Fork the repository.
 * Create a new branch for your feature or bug fix.
 * Make your changes and submit a pull request.
