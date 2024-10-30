@@ -1,0 +1,34 @@
+<suite name="All Test Suite">
+    <test name="E2E Purchase flow on chrome">
+        <parameter name="browsername" value=""/>
+        <classes>
+            <class name="testcases.TC01_Login">
+                <methods>
+                    <include name="loginWithValidUsernameAndPassword"/>
+                </methods>
+            </class>
+            <class name="testcases.TC02_Inventory">
+                <methods>
+                    <include name="selectItemsRandomly"/>
+                    <include name="clickOnCartBtn"/>
+                </methods>
+            </class>
+            <class name="testcases.TC03_Cart">
+                <methods>
+                    <include name="clickOnCheckoutBtn"/>
+                </methods>
+            </class>
+            <class name="testcases.TC04_Checkout">
+                <methods>
+                    <include name="enterDataInCheckoutPage"/>
+                </methods>
+            </class>
+            <class name="testcases.TC05_Overview">
+                <methods>
+                    <include name="clickOnFinishBtn"/>
+                    <include name="completeOrderAndValidatePrice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
