@@ -8,6 +8,9 @@
     <artifactId>SwagLabs</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>SwagLabs</name>
+    <url>https://www.saucedemo.com/v1/</url>
+
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -20,7 +23,9 @@
         </allure.cmd.download.url>
         <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
     </properties>
+
     <build>
+
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -126,6 +131,8 @@
             </plugin>
         </plugins>
     </build>
+
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
@@ -151,6 +158,18 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>${allure.version}</version>
+        </dependency>
 
     </dependencies>
+
 </project>

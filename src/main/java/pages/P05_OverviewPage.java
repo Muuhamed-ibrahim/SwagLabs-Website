@@ -10,11 +10,11 @@ public class P05_OverviewPage extends PageBase {
     }
 
     final private By finishBtn = By.xpath("//a[@class=\"btn_action cart_button\"]");
-    final private By totalPriceLocator = By.xpath("//div[@class='summary_subtotal_label']"); // لوكيتر السعر النهائي
+    final private By totalPriceLocator = By.xpath("//div[@class='summary_subtotal_label']");
 
     public P05_OverviewPage clickOnFinishBtn() {
         //driver.findElement(finishBtn).click();
-        new CustomDecorator(driver,this.finishBtn,2000).click();
+        new CustomDecorator(driver,this.finishBtn).click();
         return this;
     }
 

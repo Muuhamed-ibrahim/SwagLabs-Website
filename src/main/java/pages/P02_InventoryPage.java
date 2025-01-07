@@ -19,19 +19,18 @@ public class P02_InventoryPage extends PageBase {
 
     private double totalPrice = 0;
 
-    public P02_InventoryPage addItemsToCartRandomly() throws InterruptedException {
+    public P02_InventoryPage addItemsToCartRandomly() {
         int randomNumber = Utility.generateRandomNumber();
         System.out.println("Adding " + randomNumber + " random items to the cart.");
 
         List<WebElement> addToCartButtons = driver.findElements(By.xpath("//button[contains(@class, 'btn_inventory')]"));
         Collections.shuffle(addToCartButtons);
-        Thread.sleep(3000);
 
         totalPrice = 0;
         for (int i = 0; i < randomNumber && i < addToCartButtons.size(); i++) {
             WebElement button = addToCartButtons.get(i);
             button.click();
-            Thread.sleep(3000);
+
 
             WebElement itemElement = button.findElement(By.xpath("./ancestor::div[@class='inventory_item']"));
             String priceText = itemElement.findElement(By.xpath(".//div[@class='inventory_item_price']")).getText();
@@ -40,14 +39,13 @@ public class P02_InventoryPage extends PageBase {
             totalPrice += price;
         }
 
-        Thread.sleep(3000);
         System.out.println("Total price of added items: " + totalPrice);
         return this;
     }
 
     public P02_InventoryPage clickOnCartBtn() {
         //driver.findElement(cartBtn).click();
-        new CustomDecorator(driver,cartBtn,2000).click();
+        new CustomDecorator(driver,cartBtn).click();
         return this;
     }
 

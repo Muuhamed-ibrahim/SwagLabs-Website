@@ -16,7 +16,7 @@ public class TC01_Login extends TestBase{
         new P01_LoginPage(driver).enterUSERNAME_TXT(username).enterPASSWORD_TEXT(password).clickOnLogin_BUTTON();
 
         // Take Screenshot
-        PageBase.captureScreenshot(driver,"LoginScreenshot");
+        //PageBase.captureScreenshot(driver,"LoginScreenshot");
 
     }
 }

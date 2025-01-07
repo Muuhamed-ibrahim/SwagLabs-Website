@@ -13,7 +13,7 @@ public class P03_CartPage extends PageBase{
 
     public P03_CartPage clickOnCheckoutBtn(){
         //driver.findElement(checkoutBtn).click();
-        new CustomDecorator(driver,checkoutBtn,2000).click();
+        new CustomDecorator(driver,checkoutBtn).click();
         return this;
     }
 }
